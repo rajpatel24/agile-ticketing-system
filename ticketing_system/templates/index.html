@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Tickets {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<table class="styled-table">
+ <thead>
+  <tr>
+   <th>Ticket ID</th>
+   <th>Name</th>
+   <th>Status</th>
+   <th>Assigned To</th>
+   <th>Created</th>
+   <th>Last Updated</th>
+  </tr>
+ </thead>
+ <tbody>
+  {% for ticket in tickets %}
+  <tr>
+   <td>{{ticket.id}}</td>
+   <td><a href="/ticket/{{ticket.id}}">{{ticket.name}}</td>
+   <td>{{ticket.status}}</td>
+   <td>{{ticket.assigned_to}}</td>
+   <td>{{ticket.created_at}}</td>
+   <td>{{ticket.updated_at}}</td>
+  </tr>
+  {% endfor %}
+ </tbody>
+</table>
+{% else %}
+<div style=" text-align:center; margin-top: 15%">
+<h1 style="padding-bottom: 2%">You are not logged in</h1>
+<a href="/accounts/login/" >
+ <button class="btn btn-danger" id="login-btn" type="submit">Log In</button>
+</a>
+
+<a href="/accounts/signup/" >
+ <button class="btn btn-secondary" id="signup-btn" type="submit">Sign Up</button>
+</a>
+ </div>
+{% endif %}
+{% endblock %}
