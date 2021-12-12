@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+from .filters import TicketFilter
 from .models import Ticket
 
 
@@ -27,3 +29,12 @@ def change_ticket_status(request, ticket_id):
     ticket_obj.status = "COMPLETED"
     ticket_obj.save()
     return redirect(success_url)
+
+
+def search(request):
+    """
+    Filter for tickets
+    """
+    ticket_list = Ticket.objects.all()
+    ticket_filter = TicketFilter(request.GET, queryset=ticket_list)
+    return render(request, 'index.html', {'filter': ticket_filter})
