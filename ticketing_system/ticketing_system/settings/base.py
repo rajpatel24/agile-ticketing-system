@@ -37,7 +37,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ticketing_platform.urls'
+ROOT_URLCONF = 'ticketing_system.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ticketing_platform.wsgi.application'
+WSGI_APPLICATION = 'ticketing_system.wsgi.application'
 
 
 # Password validation
