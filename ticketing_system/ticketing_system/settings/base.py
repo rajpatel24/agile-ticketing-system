@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     # local apps
+    'ticket'
     'users',
 ]
 
