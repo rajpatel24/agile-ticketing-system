@@ -27,7 +27,7 @@ pip install -r requirements.txt
 4> Create local.py file
 
 ```
-cp my_blog/my_blog/settings/example-production.py my_blog/my_blog/settings/local.py
+cp agile-ticketing-system/agile-ticketing-system/settings/example-production.py agile-ticketing-system/agile-ticketing-system/settings/local.py
 ```
 
 5> Run migrations (Go to `project root` folder)
